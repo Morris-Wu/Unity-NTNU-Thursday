@@ -4571,12 +4571,12 @@ GameObject:
   - component: {fileID: 1481686512}
   - component: {fileID: 1481686511}
   m_Layer: 0
-  m_Name: "HuggingFace\u7BA1\u7406\u5668"
+  m_Name: "HuggingFace\u7BA1\u7406\u5668(\u8001\u5E2B)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1481686511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4740,6 +4740,50 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1367966905094457711, guid: b69c35c4f3d673e4f85004d0581f9105, type: 3}
   m_PrefabInstance: {fileID: 1608202550}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1621285234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1621285236}
+  - component: {fileID: 1621285235}
+  m_Layer: 0
+  m_Name: "Huggingface\u7BA1\u7406\u5668"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1621285235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621285234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a4711d07b508d34c80e5af5ffe3c7f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1621285236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621285234}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 192.91786, y: 2.32446, z: 31.222134}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1624661743
 GameObject:
   m_ObjectHideFlags: 0
@@ -6219,3 +6263,4 @@ SceneRoots:
   - {fileID: 1125153554}
   - {fileID: 1624661746}
   - {fileID: 1481686512}
+  - {fileID: 1621285236}

@@ -4,7 +4,10 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
-using UnityEngine.UI;
+using Newtonsoft.Json;
+using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Morris
 {
@@ -19,11 +22,16 @@ namespace Morris
         private TMP_InputField inputField;
         private string prompt;
         private string role = "你是一隻小狗";
+        private string[] npcSentences;
+
+        [SerializeField, Header("NPC 物件")]
+        private NPCController npc;
 
         private void Awake()
         {
             inputField = GameObject.Find("輸入欄位").GetComponent<TMP_InputField>();
             inputField.onEndEdit.AddListener(PlayerInput);
+            npcSentences = npc.data.sentences;
         }
 
         private void PlayerInput(string input)
@@ -39,16 +47,17 @@ namespace Morris
             {
                 
                 source_sentence = prompt,
-                sentences = ""
+                sentences = npcSentences
                 
             };
 
-            string json = JsonUtility.ToJson(inputs);
+            string json = JsonConvert.SerializeObject(inputs);
             byte[] postData = Encoding.UTF8.GetBytes(json);
-            UnityWebRequest request = new UnityWebRequest(url, "Post");
+            UnityWebRequest request = new UnityWebRequest(url, "POST");
             request.uploadHandler = new UploadHandlerRaw(postData);
+            request.downloadHandler = new DownloadHandlerBuffer();
             request.SetRequestHeader("Content-Type", "application/json");
-            request.SetRequestHeader("Authorization.", "Bearer " + key);
+            request.SetRequestHeader("Authorization", "Bearer " + key);
 
             yield return request.SendWebRequest();
 
@@ -57,3 +66,5 @@ namespace Morris
 
     }
 }
+
+

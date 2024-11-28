@@ -11,6 +11,7 @@ namespace Morris
         private DataNPC dataNPC;
 
         private Animator ani;
+        public DataNPC data => dataNPC;
 
         private void Awake()
         {
