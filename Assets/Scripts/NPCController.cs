@@ -9,6 +9,11 @@ namespace Morris
     {
         [SerializeField, Header("NPC 資料")]
         private DataNPC dataNPC;
+        [SerializeField, Header("動畫參數")]
+        private string[] paramaters =
+        {
+            "觸發攻擊_01","防禦","死亡","觸發攻擊_02","跑"
+        };
 
         private Animator ani;
         public DataNPC data => dataNPC;
@@ -17,6 +22,10 @@ namespace Morris
         {
             ani = GetComponent<Animator>();
 
+        }
+        public void PlayAinmation(int index)
+        {
+            ani.SetTrigger(paramaters[index]);
         }
     }
 }
